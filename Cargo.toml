@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "signalr-rs",
+    "signalr-rs-func-test"
+]

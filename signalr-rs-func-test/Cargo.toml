@@ -1,0 +1,10 @@
+[package]
+name = "signalr-rs-func-test"
+version = "0.1.0"
+authors = ["Miguel Pérez García <miguelpg_95@hotmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+signalr-rs = { path = "../signalr-rs" }
