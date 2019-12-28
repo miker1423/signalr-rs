@@ -1,5 +1,7 @@
 use signalr_rs;
 
 fn main() {
-    println!("Hello, world!");
+    let url = "http://localhost:5000/chat".to_owned();
+    let connection = signalr_rs::HubConnectionBuilder::new().with_url(url).build();
+    println!("{:?}", connection);
 }
