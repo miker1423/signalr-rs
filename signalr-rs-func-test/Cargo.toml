@@ -8,3 +8,11 @@ edition = "2018"
 
 [dependencies]
 signalr-rs = { path = "../signalr-rs" }
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "time"]}
+tokio-tungstenite = "0.17.2"
+serde_json = "*"
+
+[dependencies.futures-util]
+default-features = false
+features = ["sink", "std"]
+version = "0.3"

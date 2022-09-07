@@ -1,5 +1,7 @@
 [workspace]
 members = [
     "signalr-rs",
-    "signalr-rs-func-test"
+    "signalr-rs-func-test",
+    "signalr-rs-macro",
+    "serializer_test"
 ]

@@ -1,7 +1,9 @@
 
-use std::collections::HashMap;
+use std::{collections::HashMap, time::Duration};
+use reqwest::Client;
 
 pub mod protocol;
+pub mod error;
 
 #[derive(Default)]
 pub struct HubConnectionBuilder {
@@ -26,11 +28,13 @@ impl HubConnectionBuilder {
         HubConnectionBuilder { hub_url }
     }
 
-    pub fn build(&self) -> Option<protocol::responses::NegotiateRequest>  {
+    pub async fn build(&self) -> Option<protocol::responses::NegotiateRequest>  {
         if self.hub_url.is_empty() {
             return None;
         }
-        let client = reqwest::Client::new();
-        protocol::start_negotiation(&client, &self.hub_url)
+        let builder = Client::builder().build();
+        
+        let client = builder.unwrap();
+        protocol::start_negotiation(&client, &self.hub_url).await
     }
 }
